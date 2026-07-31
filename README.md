@@ -4,12 +4,12 @@ Static portfolio website for GitHub Pages.
 
 ## Files
 
-- `index.html` — homepage and project listing
-- `about.html` — about page
-- `projects/` — individual project case studies
-- `assets/css/styles.css` — all visual styling
-- `assets/js/main.js` — mobile menu and current year
-- `CNAME` — custom domain
+- `index.html`: homepage and project listing
+- `about.html`: about page
+- `projects/`: individual project case studies
+- `assets/css/styles.css`: all visual styling
+- `assets/js/main.js`: mobile menu and current year
+- `CNAME`: custom domain
 
 ## Add another project
 
