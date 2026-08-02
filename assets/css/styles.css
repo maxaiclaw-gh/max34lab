@@ -305,6 +305,13 @@ button, input, textarea { font: inherit; }
 .fact-strip dd { margin:5px 0 0; font-weight:800; }
 .project-quick-links { display:flex; flex-wrap:wrap; gap:18px; margin:20px 0 0; }
 .project-quick-links a { color:var(--primary); font-size:.9rem; font-weight:850; }
+.project-quick-menu { position:relative; color:var(--primary); font-size:.9rem; font-weight:850; }
+.project-quick-menu summary { cursor:pointer; list-style:none; }
+.project-quick-menu summary::-webkit-details-marker { display:none; }
+.project-quick-menu summary::after { content:" +"; }
+.project-quick-menu[open] summary::after { content:" −"; }
+.project-quick-menu-panel { position:absolute; top:calc(100% + 12px); left:0; z-index:4; display:grid; gap:10px; min-width:230px; padding:16px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.98); box-shadow:var(--shadow-soft); }
+.project-quick-menu-panel a { white-space:nowrap; }
 .tutorial-preview { background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .tutorial-coming-soon { display:flex; justify-content:space-between; align-items:center; gap:24px; margin:28px 0 24px; padding:24px 28px; border:1px solid #cbd6f6; border-radius:20px; background:linear-gradient(135deg,#eef3ff,#f8fbff); }
 .tutorial-coming-soon h3 { margin:8px 0 5px; font-size:1.35rem; }
