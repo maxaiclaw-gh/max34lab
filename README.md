@@ -26,7 +26,7 @@ Static portfolio website for GitHub Pages.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
 4. Select the `main` branch and `/root` folder.
 5. Save.
-6. Configure the custom domain as `www.maxlab34.com`.
+6. Configure the custom domain as `max34lab.com`.
 
 ## Local preview
 

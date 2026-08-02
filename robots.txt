@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.maxlab34.com/sitemap.xml
+Sitemap: https://max34lab.com/sitemap.xml
