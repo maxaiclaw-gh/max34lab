@@ -7,7 +7,7 @@
   <title>Max34Lab: Ideas into working products</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body id="top">
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="brand-mark">M34</span><span>Max34Lab</span></a>
@@ -56,31 +56,31 @@
       </div>
       <div class="project-grid">
         <article class="project-card">
-          <a href="projects/a-insurance.html" aria-label="View A-Insurance case study">
+          <a class="project-card-visual-link" href="projects/a-insurance.html" aria-label="View A-Insurance case study">
             <div class="project-visual insurance project-visual-real">
               <img src="assets/images/a-insurance-home.webp" alt="A-Insurance customer quote homepage" loading="lazy">
             </div>
-            <div class="project-body">
-              <div class="project-meta"><span class="tag">Business analysis</span><span class="tag">Web prototype</span><span class="tag">Insurance</span></div>
-              <h3>A-Insurance</h3>
-              <p class="muted">An end-to-end insurance lifecycle proof of concept covering quoting, policy administration, claims and BA artefacts.</p>
-              <span class="project-link">View case study →</span>
-            </div>
           </a>
+          <div class="project-body">
+            <div class="project-meta"><span class="tag">Business analysis</span><span class="tag">Web prototype</span><span class="tag">Insurance</span></div>
+            <h3>A-Insurance</h3>
+            <p class="muted">An end-to-end insurance lifecycle proof of concept covering quoting, policy administration, claims and BA artefacts.</p>
+            <div class="project-link-row"><a class="project-link" href="projects/a-insurance.html">View case study →</a><a class="project-link project-demo-link" href="https://a-insurance.max34lab.com" target="_blank" rel="noopener">Open demo ↗</a></div>
+          </div>
         </article>
 
         <article class="project-card">
-          <a href="projects/maxphotoframes.html" aria-label="View Max Photo Frames product page">
-            <div class="project-visual photo project-visual-real">
-              <img src="assets/images/maxphotoframes/01-frame-every-moment.webp" alt="Max Photo Frames V3 framed photo editor" loading="lazy">
-            </div>
-            <div class="project-body">
-              <div class="project-meta"><span class="tag">iOS</span><span class="tag">V3 product</span><span class="tag">AI imaging</span></div>
-              <h3>Max Photo Frames</h3>
-              <p class="muted">A privacy-first iOS photo studio for frames, captions, Layer Magic, 3D Props and dependable export.</p>
-              <span class="project-link">View product →</span>
+          <a class="project-card-visual-link" href="projects/maxphotoframes.html" aria-label="View Max Photo Frames product page">
+            <div class="project-visual photo project-visual-real project-visual-maxphoto">
+              <img src="../app-store/app-store-promos/en-US/ipad-pro-13/01_frame-every-moment.png" alt="Max Photo Frames V3 framed dog photo editor" loading="lazy">
             </div>
           </a>
+          <div class="project-body">
+            <div class="project-meta"><span class="tag">iOS</span><span class="tag">V3 product</span><span class="tag">AI imaging</span></div>
+            <h3>Max Photo Frames</h3>
+            <p class="muted">A privacy-first iOS photo studio for frames, captions, Layer Magic, 3D Props and dependable export.</p>
+            <div class="project-link-row"><a class="project-link" href="projects/maxphotoframes.html">View product →</a><a class="project-link project-download-link" href="https://apps.apple.com/app/apple-store/id6751881820?pt=118095182&amp;ct=max34lab.com&amp;mt=8" target="_blank" rel="noopener">Download ↗</a></div>
+          </div>
         </article>
       </div>
     </div>
@@ -106,7 +106,7 @@
   </section>
 </main>
 
-<footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Max34Lab</span><span>Designed and built in Sydney.</span></div></footer>
+<footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Max34Lab</span><span>Designed and built in Sydney.</span></div></footer><a class="back-to-top" href="#top" aria-label="Back to top">Back to top ↑</a>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
