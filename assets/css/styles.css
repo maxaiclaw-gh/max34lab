@@ -312,6 +312,20 @@ button, input, textarea { font: inherit; }
 .project-quick-menu[open] summary::after { content:" −"; }
 .project-quick-menu-panel { position:absolute; top:calc(100% + 12px); left:0; z-index:4; display:grid; gap:10px; min-width:230px; padding:16px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.98); box-shadow:var(--shadow-soft); }
 .project-quick-menu-panel a { white-space:nowrap; }
+.tutorial-layout { display:grid; grid-template-columns:240px minmax(0,1fr); gap:36px; align-items:start; }
+.tutorial-sidebar { position:sticky; top:102px; }
+.tutorial-nav { display:grid; gap:15px; }
+.tutorial-nav .eyebrow { margin-bottom:4px; }
+.tutorial-nav a { position:relative; padding:2px 0 2px 18px; color:var(--muted); font-weight:800; line-height:1.35; }
+.tutorial-nav a::before { content:""; position:absolute; left:0; top:.72em; width:6px; height:6px; border-radius:50%; background:var(--line); transform:translateY(-50%); transition:background .2s ease, transform .2s ease; }
+.tutorial-nav a:hover, .tutorial-nav a[aria-current="true"] { color:var(--text); }
+.tutorial-nav a[aria-current="true"]::before { background:var(--primary); transform:translateY(-50%) scale(1.35); }
+.tutorial-content .section { padding-top:0; }
+.tutorial-content .section + .section { padding-top:98px; }
+@media (max-width:900px) {
+  .tutorial-layout { display:block; }
+  .tutorial-sidebar { display:none; }
+}
 .privacy-callout { order:6; padding:0 0 28px; }
 .privacy-callout-card { display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:start; padding:28px; border:1px solid #cfe0ff; border-radius:24px; background:linear-gradient(135deg,#eef5ff,#ffffff 62%,#f3efff); box-shadow:var(--shadow-soft); }
 .privacy-check { display:grid; place-items:center; width:52px; height:52px; border:4px solid var(--primary); border-radius:50%; color:var(--primary); font-size:2rem; font-weight:900; line-height:1; }
@@ -529,3 +543,129 @@ button, input, textarea { font: inherit; }
 @media(max-width:680px){.build-history-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.tutorial-grid{grid-template-columns:1fr}.tutorial-coming-soon{align-items:flex-start;flex-direction:column}}
 @media(max-width:680px){.privacy-callout-card{grid-template-columns:1fr}.privacy-meaning-grid{grid-template-columns:1fr}.back-to-top{right:16px;bottom:16px}}
+
+/* ==========================================================================
+   Max Photo Frames — the illustrated stage (T10.5)
+
+   A hand port of ShowcaseStage.swift. Same vocabulary, same geometry, same
+   colours, so the site shows what the app shows.
+
+   NOTE FOR WHOEVER CHANGES EITHER SIDE: this is a SECOND implementation, not a
+   shared one. Swift and CSS cannot share a source of truth without a build step
+   this site deliberately does not have. If the app's stage changes, change this
+   too — nothing will catch it for you.
+   ========================================================================== */
+
+.mpf-stage-block { display: grid; gap: 1rem; margin: 1.25rem 0 0; }
+
+/* Sizes are in container-query units so every glyph scales with the stage, the
+   way the app's fixed 340pt layout does. Percentage font-size would be relative
+   to the PARENT'S FONT SIZE, not the box — the first version of this made every
+   emoji a few pixels tall. */
+.mpf-stage {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 392 / 340;
+  margin-inline: auto;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #333333, #1a1a1a);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  transition: border-radius .35s ease, background .35s ease, box-shadow .35s ease;
+}
+.mpf-stage::after {
+  content: ""; position: absolute; inset: 0;
+  border-radius: inherit; border: 1px solid rgba(255, 255, 255, .15);
+  pointer-events: none;
+}
+
+.mpf-matte {
+  position: absolute; inset: 4.6%;
+  border-radius: 8px; background: #f5f5f5;
+  transition: inset .35s ease, background .35s ease;
+}
+
+.mpf-canvas {
+  container-type: inline-size;
+  position: absolute; inset: 6.6%;
+  border-radius: 6px; overflow: hidden;
+  background: #eef2f7;
+}
+
+.mpf-layer { position: absolute; inset: 0; transition: opacity .35s ease, filter .35s ease; }
+.mpf-sky        { z-index: 1; background: rgba(0, 122, 255, .5); }
+.mpf-background { z-index: 2; }
+.mpf-text       { z-index: 3; }
+.mpf-object     { z-index: 4; }
+.mpf-subject    { z-index: 5; }
+.mpf-foreground { z-index: 6; }
+
+.mpf-em { position: absolute; line-height: 1; user-select: none; }
+.mpf-cloud { font-size: 17.6cqw; left: 23.5%; top: 21%; }
+.mpf-sun   { font-size: 14.7cqw; left: 73.5%; top: 14%; }
+.mpf-moon  { font-size: 14.7cqw; left: 73.5%; top: 14%; opacity: 0; }
+.mpf-hills { font-size: 22cqw;   left: 50%; bottom: 24%; transform: translateX(-50%); white-space: nowrap; }
+.mpf-dog   { font-size: 20.6cqw; right: 17.6%; bottom: 10%; }
+.mpf-person{ font-size: 38cqw;   left: 20.6%; bottom: 0; }
+.mpf-plants{ font-size: 25cqw;   left: 50%; bottom: -7%; transform: translateX(-50%); white-space: nowrap; letter-spacing: -.2em; }
+
+.mpf-text span {
+  position: absolute; left: 50%; top: 58%;
+  transform: translate(-50%, -50%);
+  font-weight: 900; font-size: 11cqw;
+  color: #fff; text-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+  white-space: nowrap; opacity: 0;
+  transition: opacity .35s ease;
+}
+
+/* 3D Pop: a SECOND copy of the subject, outside the canvas clip, so it can
+   cross the frame edge. That crossing is the whole effect. */
+.mpf-pop {
+  position: absolute; left: 24%; bottom: 2%;
+  font-size: 33cqw; line-height: 1;
+  transform-origin: bottom center; transform: scale(1.3) translateY(10%);
+  filter: drop-shadow(0 14px 12px rgba(0, 0, 0, .45));
+  opacity: 0; transition: opacity .35s ease; pointer-events: none; z-index: 7;
+}
+
+/* ---- States ---- */
+.mpf-stage[data-look="gradient"] { border-radius: 20px; background: linear-gradient(135deg, #5c4db8, #d9708c); box-shadow: 0 14px 16px rgba(0,0,0,.32); }
+.mpf-stage[data-look="gradient"] .mpf-matte { inset: 5.1%; background: #f7f7f7; }
+.mpf-stage[data-look="oak"] { border-radius: 10px; background: linear-gradient(135deg, #8c6138 0%, #9e7042 18%, #7a522e 35%, #996b3d 55%, #805730 74%, #94663b 100%); box-shadow: 0 13px 14px rgba(0,0,0,.34); }
+.mpf-stage[data-look="oak"] .mpf-matte { inset: 5.6%; background: #f2f2f2; }
+.mpf-stage[data-look="deep"] { border-radius: 6px; background: linear-gradient(135deg, #292929, #0a0a0a); box-shadow: 0 26px 30px rgba(0,0,0,.6); }
+.mpf-stage[data-look="deep"] .mpf-matte { inset: 3.6%; background: #6b6b6b; } /* mid grey, not another near-black: see ShowcaseFrameLook.deep */
+
+.mpf-stage[data-mode="portraitBlur"] .mpf-sky,
+.mpf-stage[data-mode="portraitBlur"] .mpf-background { filter: blur(4px); }
+.mpf-stage[data-mode="portraitBlur"] .mpf-foreground { filter: blur(6px); }
+
+.mpf-stage[data-mode="removeBackground"] .mpf-sky,
+.mpf-stage[data-mode="removeBackground"] .mpf-background,
+.mpf-stage[data-mode="removeBackground"] .mpf-foreground { opacity: 0; }
+
+.mpf-stage[data-mode="removeForeground"] .mpf-subject,
+.mpf-stage[data-mode="removeForeground"] .mpf-object { opacity: 0; }
+
+.mpf-stage[data-text="behind"] .mpf-text span,
+.mpf-stage[data-text="front"]  .mpf-text span { opacity: 1; }
+.mpf-stage[data-text="front"]  .mpf-text { z-index: 7; }
+
+.mpf-stage[data-pop="true"] .mpf-subject { opacity: 0; }
+.mpf-stage[data-pop="true"] .mpf-pop { opacity: 1; }
+
+/* ---- Controls ---- */
+.mpf-controls { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+.mpf-chip {
+  font: inherit; font-size: .85rem; font-weight: 600;
+  padding: .5rem .9rem; border-radius: 12px; cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, .12); background: #fff; color: inherit;
+}
+.mpf-chip[aria-pressed="true"] { background: #3a34a4; border-color: transparent; color: #fff; }
+.mpf-where {
+  display: grid; gap: .5rem; padding: .9rem 1rem;
+  border: 1px solid rgba(0, 0, 0, .12); border-radius: 14px;
+}
+.mpf-where p { margin: 0; }
+.mpf-where .mpf-requires { font-size: .9rem; opacity: .75; }
