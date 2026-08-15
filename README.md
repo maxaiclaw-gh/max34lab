@@ -7,10 +7,10 @@ Static portfolio website for GitHub Pages.
 - `index.html`: homepage and project listing
 - `about.html`: about page
 - `projects/`: individual project case studies, Max Photo Frames audience pages, tutorial and privacy guide
-- `technology/`: the public technology section — one page per topic
+- `projects/maxphotoframes/technology/`: the public Max Photo Frames technology section — one page per topic
   (why this app, how it works, on-device AI, layers and depth, export quality, built and tested).
   Each page is named for the search query it targets and carries its own canonical URL, Open Graph
-  tags and schema.org markup. Add new pages here, not to `projects/`, and add them to `sitemap.xml`.
+  tags and schema.org markup. Add new pages here and add them to `sitemap.xml`.
 - `assets/css/product-tech.css`: styling for that section only
 - `assets/css/styles.css`: all visual styling
 - `assets/js/main.js`: mobile menu and current year
@@ -34,6 +34,16 @@ Static portfolio website for GitHub Pages.
 4. Select the `main` branch and `/root` folder.
 5. Save.
 6. Configure the custom domain as `max34lab.com`.
+
+### Deploy log noise: `punycode` deprecation warning
+
+If the Pages deploy job logs `DeprecationWarning: The 'punycode' module is deprecated`, this is not
+caused by anything in this site. There is no `package.json`, no `node_modules`, and no JavaScript
+here that touches `punycode` — the only script is `assets/js/main.js`, plain vanilla JS. The warning
+comes from Node.js inside GitHub's own `actions/deploy-pages` action, which uses it internally during
+the deploy step; it appears on unrelated repos too and does not affect the deployment outcome. If a
+deploy actually fails, the real cause will be a later line (an `Error:`, a non-zero exit, or the
+deployment API call itself failing) — not this warning.
 
 ## SEO and analytics
 
