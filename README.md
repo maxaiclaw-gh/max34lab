@@ -6,7 +6,9 @@ Static portfolio website for GitHub Pages.
 
 - `index.html`: homepage and project listing
 - `about.html`: about page
-- `projects/`: individual project case studies, Max Photo Frames audience pages, tutorial and privacy guide
+- `projects/`: one folder per public project
+- `projects/maxphotoframes/`: all Max Photo Frames content, including the product page, tutorial,
+  support, policies and audience guides
 - `projects/maxphotoframes/technology/`: the public Max Photo Frames technology section — one page per topic
   (why this app, how it works, on-device AI, layers and depth, export quality, built and tested).
   Each page is named for the search query it targets and carries its own canonical URL, Open Graph
@@ -20,10 +22,10 @@ Static portfolio website for GitHub Pages.
 
 ## Add another project
 
-1. Copy one of the files inside `projects/`.
+1. Create a folder for the project inside `projects/` and use an `index.html` entry page.
 2. Rename it, for example `new-project.html`.
 3. Update the title, description and case-study content.
-4. Copy a project card in `index.html` and link it to the new file.
+4. Copy a project card in `index.html` and link it to the new project folder.
 5. Add a new visual class in `assets/css/styles.css` if you want a different colour treatment.
 
 ## Publish with GitHub Pages
