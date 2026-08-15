@@ -11,6 +11,13 @@ document.querySelectorAll('[data-year]').forEach(el => {
   el.textContent = new Date().getFullYear();
 });
 
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+  const updateBackToTop = () => backToTop.classList.toggle('is-visible', window.scrollY > 600);
+  updateBackToTop();
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+}
+
 document.querySelectorAll('[data-device-showcase]').forEach(showcase => {
   const tabs = showcase.querySelectorAll('[data-device-tab]');
   const panels = showcase.querySelectorAll('.device-panel');
