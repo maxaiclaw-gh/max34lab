@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Max Photo Frames keeps your presets, captions and personal details safe across devices: backup files, iCloud Sync, conflict handling, and what each recovery path covers.">
+  <link rel="canonical" href="https://max34lab.com/projects/maxphotoframes/technology/backup-sync-and-recovery.html">
+  <meta property="og:title" content="Backup, Sync and Recovery in Max Photo Frames">
+  <meta property="og:description" content="How Max Photo Frames keeps your presets, captions and personal details safe across devices: backup files, iCloud Sync, conflict handling, and what each recovery path covers.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://max34lab.com/projects/maxphotoframes/technology/backup-sync-and-recovery.html">
+  <meta property="og:site_name" content="Max34Lab">
+  <meta name="twitter:card" content="summary">
+  <title>Backup, Sync and Recovery in Max Photo Frames</title>
+  <link rel="stylesheet" href="../../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../../assets/css/product-tech.css">
+</head>
+<body id="top">
+  <header class="site-header"><div class="container nav"><a class="brand" href="../../../index.html"><span class="brand-mark">M34</span><span>Max34Lab</span></a><button class="menu-button" aria-label="Open navigation" aria-expanded="false">Menu</button><nav class="nav-links" aria-label="Primary navigation"><a href="../../../index.html">Home</a><a href="../../maxphotoframes.html">Max Photo Frames</a><a href="../../maxphotoframes-tutorial.html">Tutorial</a><a href="index.html">Technology</a><a href="../../../about.html">About</a></nav></div></header>
+
+  <main>
+    <nav class="pt-breadcrumb" aria-label="Breadcrumb"><div class="container"><a href="../../../index.html">Home</a> › <a href="../../maxphotoframes.html">Max Photo Frames</a> › <a href="index.html">Technology</a> › <span>Backup &amp; Sync</span></div></nav>
+    <section class="page-hero project-hero"><div class="container"><div class="eyebrow">Technology · 07</div><h1>Your presets travel with you. Your photos stay private.</h1><p class="muted lede">Max Photo Frames gives you three ways to keep your work safe: a backup file you control, iCloud Sync between your devices, and a separate personal-details file for device replacement. None of them upload your photos.</p></div></section>
+
+    <div class="container pt-shell">
+      <nav class="pt-subnav" aria-label="Product and technology pages"><a href="index.html">Overview</a><a href="why-this-app.html">Journey</a><a href="how-to-frame-a-photo.html">How It Works</a><a href="on-device-photo-ai.html">On-Device AI</a><a href="text-behind-subject.html">Layers &amp; Depth</a><a href="export-quality.html">Export Quality</a><a href="how-the-app-is-built-and-tested.html">Built &amp; Tested</a><a aria-current="page" href="backup-sync-and-recovery.html">Backup &amp; Sync</a></nav>
+
+      <!-- Section 1: The three recovery paths -->
+      <h2 class="pt-h2">Three paths, three purposes</h2>
+      <div class="ba-grid">
+        <article class="ba-card">
+          <span>Backup file</span>
+          <h3>Presets &amp; Settings Backup</h3>
+          <ul>
+            <li>A single .mpfbackup file you save wherever you like</li>
+            <li>Contains all your custom presets, captions, app settings, and personal details</li>
+            <li>You choose what to restore: presets, captions, settings, or details independently</li>
+            <li>Does NOT contain photos, in-progress frames, or exported images</li>
+          </ul>
+        </article>
+        <article class="ba-card">
+          <span>iCloud Sync</span>
+          <h3>Library sync across devices</h3>
+          <ul>
+            <li>Keeps saved presets and captions the same on every device signed in to your Apple Account</li>
+            <li>Updates your preset library, not the photo on your screen</li>
+            <li>Off by default. You switch it on when ready</li>
+            <li>Does NOT sync photos, personal details, or your current canvas</li>
+          </ul>
+        </article>
+        <article class="ba-card">
+          <span>My Details</span>
+          <h3>Personal details file</h3>
+          <ul>
+            <li>A small .mpfuser file with your birthdays, trackers, theme, and content preferences</li>
+            <li>Export from the Hub, save to iCloud Drive, import on a new device</li>
+            <li>Also included inside a full backup automatically</li>
+            <li>Never travels with a shared preset. Your personal data stays personal</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Section 2: What travels where -->
+      <h2 class="pt-h2">What travels where</h2>
+      <div class="pipeline-flow" aria-label="Data flow">
+        <article class="pipeline-step"><b>Presets</b><h3>Backup ✓ · Sync ✓ · Share ✓</h3><p>Your custom looks travel through all three paths. Built-in presets are already on every device.</p></article>
+        <article class="pipeline-step"><b>Captions</b><h3>Backup ✓ · Sync ✓ · Share (referenced only)</h3><p>Your saved captions sync and back up. A shared preset carries only the captions it uses.</p></article>
+        <article class="pipeline-step"><b>Personal details</b><h3>Backup ✓ · .mpfuser ✓ · Sync ✗ · Share ✗</h3><p>Birthdays, trackers, theme. Per device by design. Explicit export only.</p></article>
+        <article class="pipeline-step"><b>Photos</b><h3>None of the above</h3><p>Your photos never leave the device through the app. Apple's own device backup handles them.</p></article>
+      </div>
+
+      <!-- Section 3: How sync works -->
+      <h2 class="pt-h2">How iCloud Sync works</h2>
+      <ol class="ac-list">
+        <li>You switch it on in Hub → Maintenance &amp; Data.</li>
+        <li>Your presets and captions are pushed to your private iCloud account (Apple's CloudKit).</li>
+        <li>Your other devices pull changes on launch, on foreground, and within seconds of an edit.</li>
+        <li>A change from another device updates your library. The photo on screen is never replaced while you are editing.</li>
+        <li>When a preset has changed elsewhere, its card says "Updated on another device". Tap it to use the new version.</li>
+        <li>If both devices edit the same preset while disconnected, the later save keeps the name and the earlier version is saved as a copy. No design work is lost.</li>
+        <li>When a preset from another device has the same name as one you already have, it appears with a ◆ mark so you can see both side by side and delete whichever you do not want.</li>
+      </ol>
+
+      <!-- Section 4: How backup works -->
+      <h2 class="pt-h2">How backup and restore works</h2>
+      <ol class="ac-list">
+        <li>Hub → Maintenance &amp; Data → Export Backup File.</li>
+        <li>The app creates a .mpfbackup file and opens the share sheet.</li>
+        <li>Save it to iCloud Drive, AirDrop it, or email it. It is a normal file you own.</li>
+        <li>To restore: open the file from Files, or use Hub → Import Backup File.</li>
+        <li>Choose what to bring back (presets, captions, settings, personal details).</li>
+        <li>The app tells you exactly what was added: "3 presets added, 12 captions added, settings applied."</li>
+        <li>Nothing you already have is overwritten. Restored content is added alongside your existing library.</li>
+      </ol>
+
+      <!-- Section 5: Technology underneath -->
+      <h2 class="pt-h2">The technology underneath</h2>
+      <div class="ba-grid">
+        <article class="ba-card">
+          <span>CloudKit private database</span>
+          <h3>Your data in your iCloud</h3>
+          <ul>
+            <li>Stored in Apple's CloudKit private database. Only your Apple Account can access it</li>
+            <li>The developer cannot see, read, or recover your synced data</li>
+            <li>Silent push notifications wake the app when another device writes</li>
+            <li>Custom zone with change-token pagination for reliable multi-page fetches</li>
+          </ul>
+        </article>
+        <article class="ba-card">
+          <span>Conflict resolution</span>
+          <h3>Last writer wins + conflict copies</h3>
+          <ul>
+            <li>Each edit carries an app-level timestamp (not the server clock)</li>
+            <li>The newer edit keeps the original preset identity</li>
+            <li>The older version is preserved as a named copy, never silently destroyed</li>
+            <li>Divergence detection ensures copies fire only on genuine concurrent edits</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- FAQ -->
+      <h2 class="pt-h2">Common questions</h2>
+      <details class="pt-faq"><summary>Does backing up or syncing upload my photos?</summary><p>No. Photos never leave the device through the app. The backup carries your presets, captions, and settings: configuration, not images.</p></details>
+      <details class="pt-faq"><summary>Can a sync problem delete my presets?</summary><p>No. An empty or missing answer from iCloud is never treated as an instruction to delete your library. If the cloud copy goes missing for any reason, each device keeps everything it has and quietly puts the library back. This rule is enforced in code and covered by automated tests.</p></details>
+      <details class="pt-faq"><summary>What if I switch iCloud accounts?</summary><p>The app detects the account change and resets its sync bookkeeping. Your local presets and captions stay exactly as they are. The next sync treats the new account as a fresh start.</p></details>
+      <details class="pt-faq"><summary>What happens if I delete iCloud data?</summary><p>"Delete iCloud Data" in the Hub removes the iCloud copy and switches sync off on this device. Everything on this device stays, and your other devices keep their own copies. If sync is still on elsewhere, that device will upload its library again, so switch sync off on every device first if you want the cloud copy gone for good.</p></details>
+      <details class="pt-faq"><summary>Can I restore a backup on a different device?</summary><p>Yes. The .mpfbackup file works on any device with the app installed. Save it to iCloud Drive and open it from there, or AirDrop it directly.</p></details>
+      <details class="pt-faq"><summary>Do my birthdays and tracker dates sync?</summary><p>No. Personal details stay on the device you entered them on. Export them with "Export My Details" in the Hub and import on the new device. A full backup also carries them.</p></details>
+
+      <nav class="pt-pager" aria-label="Section pagination"><a class="pt-prev" href="how-the-app-is-built-and-tested.html">← Built &amp; Tested</a><span></span></nav>
+      <aside class="pt-cta"><div><div class="eyebrow">The app itself</div><h2>See it on your own photos.</h2><p>Max Photo Frames is free on the App Store for iPhone and iPad.</p></div><div class="actions"><a class="button primary" href="https://apps.apple.com/app/apple-store/id6751881820?pt=118095182&amp;ct=max34lab.com&amp;mt=8" target="_blank" rel="noopener">Download on the App Store ↗</a><a class="button secondary" href="../../maxphotoframes-tutorial.html">See the photo editing tutorial</a></div></aside>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Max34Lab</span><span><a href="../../maxphotoframes.html">Max Photo Frames</a> · <a href="../../maxphotoframes-privacy.html">Privacy</a> · <a href="../../maxphotoframes-support.html">Support</a> · <a href="../../terms.html">Terms</a></span></div></footer><a class="back-to-top" href="#top" aria-label="Back to top">Back to top ↑</a>
+  <script src="../../../assets/js/main.js"></script>
+</body>
+</html>
