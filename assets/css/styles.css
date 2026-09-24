@@ -472,7 +472,7 @@ button, input, textarea { font: inherit; }
 .case-gallery figure { margin:0; overflow:hidden; border:1px solid var(--line); border-radius:22px; background:#fff; box-shadow:var(--shadow-soft); }
 .case-gallery img { width:100%; height:auto; }
 .case-gallery figcaption { padding:13px 16px 16px; color:var(--muted); font-size:.88rem; }
-.ipad-gallery { grid-template-columns:1fr; max-width:760px; margin-inline:auto; }
+.ipad-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:980px; margin-inline:auto; }
 .delivery-callout { padding:34px; border:1px solid #bfdbfe; border-radius:24px; background:linear-gradient(135deg,#eff6ff,#f5f3ff 56%,#ecfeff); box-shadow:var(--shadow-soft); }
 .delivery-callout h2 { margin:10px 0 12px; }
 .callout-label,.stack-grid article>span { display:inline-flex; padding:6px 10px; border-radius:999px; background:#e0e7ff; color:#4338ca; font-size:.72rem; font-weight:850; text-transform:uppercase; letter-spacing:.05em; }
@@ -688,3 +688,13 @@ button, input, textarea { font: inherit; }
 }
 .mpf-where p { margin: 0; }
 .mpf-where .mpf-requires { font-size: .9rem; opacity: .75; }
+
+/* About: each skill links to its evidence */
+.prose li { margin-bottom: 10px; }
+.prose li a { color: var(--primary); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.prose li a::after { content: " →"; }
+.prose li a:hover { text-decoration: underline; }
+
+/* Home hero: proof tiles stay readable at medium widths */
+@media (max-width: 1100px) { .stat { padding: 10px 11px; } .stat strong { font-size: 1.02rem; } .stat span { font-size: .72rem; line-height: 1.3; display: block; } }
+.cta .button { white-space: nowrap; flex: none; }
