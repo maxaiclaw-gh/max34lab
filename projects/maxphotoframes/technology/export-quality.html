@@ -10,10 +10,10 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://max34lab.com/projects/maxphotoframes/technology/export-quality.html">
   <meta property="og:site_name" content="Max34Lab">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Why Your Exported Photo Matches What You See on Screen</title>
   <link rel="stylesheet" href="../../../assets/css/styles.css">
-  <link rel="stylesheet" href="../../../assets/css/product-tech.css">
+  <link rel="stylesheet" href="../../../assets/css/product-tech.css?v=20260924r">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -86,7 +86,7 @@
           "name": "Does exporting share my location or camera data?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Only if you choose to keep it. Metadata is retained or scrubbed according to your privacy settings before the file is delivered."
+            "text": "Camera settings, lens and GPS location never travel inside the saved file: the app draws a new image, so the original photo’s details are not carried over. The original date and location are stored beside the saved photo in your Photos library only if you turn on Hub → Saving Photos → Keep Original Photo Details, which is off by default. A saved video or GIF keeps the photo’s capture date in Photos either way, and Save with Current Date uses today’s date instead. Camera numbers appear on the picture itself only if you placed a camera settings caption there."
           }
         },
         {
@@ -94,7 +94,7 @@
           "name": "What resolution do I get?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Exports render at delivery quality from the best available source. When AI subject effects are active the output has a practical ceiling, and the quality picker states this rather than quietly downscaling."
+            "text": "You choose one of four levels in Hub → Saving Photos → Quality: Low (1080 px), Medium (2048 px), High (4096 px, the everyday default) or Max (as much of the photo’s own detail as the device can keep). A framed or captioned design is saved at the design’s size, so the frame, words and logo stay sharp; a plain photo is never enlarged beyond its own size. With a print size chosen, the photo saves for that paper at 300 dots per inch, so an 8x10 is 2,400 x 3,000 pixels, and Frame → Print & Shape tells you what your photo will give on that paper. When AI subject effects are active the output has a practical ceiling, and the quality picker states this rather than quietly downscaling."
           }
         }
       ]
@@ -102,6 +102,9 @@
   ]
 }
   </script>
+  <meta property="og:image" content="https://max34lab.com/assets/images/og/og-maxphotoframes.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 </head>
 <body id="top">
   <header class="site-header"><div class="container nav"><a class="brand" href="../../../index.html"><span class="brand-mark">M34</span><span>Max34Lab</span></a><button class="menu-button" aria-label="Open navigation" aria-expanded="false">Menu</button><nav class="nav-links" aria-label="Primary navigation"><a href="../../../index.html">Home</a><a href="../index.html">Max Photo Frames</a><a href="../tutorial.html">Tutorial</a><a aria-current="page" href="index.html">Technology</a><a href="../../../about.html">About</a></nav></div></header>
@@ -112,18 +115,50 @@
 
     <div class="container pt-shell">
       <nav class="pt-subnav" aria-label="Product and technology pages"><a href="index.html">Overview</a><a href="why-this-app.html">Journey</a><a href="how-to-frame-a-photo.html">How It Works</a><a href="on-device-photo-ai.html">On-Device AI</a><a href="text-behind-subject.html">Layers &amp; Depth</a><a aria-current="page" href="export-quality.html">Export Quality</a><a href="how-the-app-is-built-and-tested.html">Built &amp; Tested</a><a href="backup-sync-and-recovery.html">Backup &amp; Sync</a></nav>
-      <div class="ba-proof reverse"><img src="../../../assets/images/maxphotoframes/01-frame-every-moment-ipad.webp" alt="Max Photo Frames iPad editor showing the composition that will be exported" loading="lazy"><div class="ba-proof-copy"><div class="eyebrow">The delivery promise</div><h3>What the user reviews is what the app delivers.</h3><p>The live canvas and high-resolution export use the same crop coordinates, frame geometry, layer order and profile snapshot.</p><ul><li>No mid-export state drift</li><li>No resolution-dependent crop movement</li><li>No UI-only ownership of reusable AI assets</li></ul></div></div>
-          <div class="pipeline-flow" aria-label="Export pipeline"><article class="pipeline-step"><b>EX-01</b><h3>Validate and snapshot</h3><p>Confirm a usable document, then capture synchronized document, profile and canvas state.</p></article><article class="pipeline-step"><b>EX-02</b><h3>Resolve source</h3><p>Open the best available full-quality source for this scoped render operation.</p></article><article class="pipeline-step"><b>EX-03</b><h3>Render and compose</h3><p>Rebuild required AI and decor assets, apply shared geometry and assemble final pixels.</p></article><article class="pipeline-step"><b>EX-04</b><h3>Deliver safely</h3><p>Choose format, apply metadata privacy rules, then save or share the result.</p></article></div>
-          <h3 style="margin-top:34px">Delivery routes</h3><div class="delivery-grid"><div>Still image</div><div>Animated GIF</div><div>Cinematic video</div><div>Live Photo</div><div>System share</div></div>
-          <div class="ba-grid"><article class="ba-card"><span>Format rules</span><h3>Pixels determine the container</h3><ul><li>PNG protects required transparency.</li><li>Opaque stills can use JPEG.</li><li>GIF and video receive a solid matte where equivalent alpha is unavailable.</li></ul></article><article class="ba-card"><span>Business controls</span><h3>Delivery stays under user control</h3><ul><li>Final review precedes delivery.</li><li>Long-running work reports progress and can be cancelled.</li><li>Metadata is retained or scrubbed according to privacy settings.</li></ul></article></div>
-          <h3 style="margin-top:34px">WYSIWYG acceptance criteria</h3><ol class="ac-list"><li>Given a synchronized document, when preview and export render at different resolutions, then normalized photo and caption positions retain the same visual placement.</li><li>Given 3D Pop, parallax or a frame shadow, when preview and export calculate clearance, then both use the shared frame-padding decision.</li><li>Given reusable AI subject assets, when export runs, then it resolves document-owned artifacts or rebuilds them at export quality rather than depending on a transient UI cache.</li><li>Given privacy controls that remove metadata, when the result is delivered, then restricted creation, location or camera data does not travel in the exported file.</li></ol>
-      <h2 class="pt-h2">Common questions</h2><details class="pt-faq"><summary>Why do exported photos sometimes look different from the preview in other apps?</summary><p>Usually because the preview and the export are drawn by different code paths at different resolutions. Max Photo Frames renders both from one shared geometry contract, so positions, crop and layer order stay identical.</p></details><details class="pt-faq"><summary>Does exporting share my location or camera data?</summary><p>Only if you choose to keep it. Metadata is retained or scrubbed according to your privacy settings before the file is delivered.</p></details><details class="pt-faq"><summary>What resolution do I get?</summary><p>Exports render at delivery quality from the best available source. When AI subject effects are active the output has a practical ceiling, and the quality picker states this rather than quietly downscaling.</p></details>
+      <h2 class="pt-h2" id="what-you-see">The photo you save is the one you saw</h2>
+      <div class="ba-proof reverse"><img src="../../../assets/images/maxphotoframes/export-menu-crop.webp" alt="The Export menu open over a framed photo: Save as Photo, Save as Live Photo, Save as Video (3D), Save as GIF, Share Photo and Print" loading="lazy"><div class="ba-proof-copy"><div class="eyebrow">One picture, drawn twice</div><h3>Not a screenshot. The same picture, at full size.</h3><p>What you see while editing and the file you save are drawn from the same instructions: the same crop, the same frame, the same layers in the same order. Only the size changes, so nothing shifts, moves or goes soft on the way out.</p></div></div>
+
+      <h2 class="pt-h2" id="ways-to-save">Six ways out</h2>
+      <div class="save-ways">
+        <div><b>Save as Photo</b><span>A still, JPEG or PNG</span></div>
+        <div><b>Save as Live Photo</b><span>For a Live Photo</span></div>
+        <div><b>Save as Video (3D)</b><span>A short 3D moving shot</span></div>
+        <div><b>Save as GIF</b><span>A looping animation</span></div>
+        <div><b>Share Photo</b><span>Straight to another app</span></div>
+        <div><b>Print</b><span>To your printer</span></div>
+      </div>
+      <p class="muted net-lead ai-note">All six are under <b>Export</b> in the editor.</p>
+
+      <h2 class="pt-h2" id="your-choices">Your choices, before you save</h2>
+      <div class="ai-uses">
+        <article><span class="ai-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18h16M6 18V9M10 18V5M14 18v-7M18 18v-4"/></svg></span><h3>Quality</h3><p>Low, Medium, High or Max in Hub → Saving Photos. A video, GIF or Live Photo can pick its own quality and shows the file size first.</p></article>
+        <article><span class="ai-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><h3>Print size</h3><p>Pick a paper such as 4x6 or 8x10 and the photo saves at 300 dots per inch for it. An 8x10 is 2,400 x 3,000 pixels.</p></article>
+        <article><span class="ai-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" stroke-dasharray="3 2.5"/><path d="M9 12h6"/></svg></span><h3>Transparent</h3><p>Choose Transparent as the Background Fill in Frame → Print &amp; Shape, and the photo saves as a PNG you can place on anything.</p></article>
+      </div>
+
+      <h2 class="pt-h2" id="stays-private">What stays private</h2>
+      <p class="muted net-lead">The app draws a new picture, so the camera settings, lens and GPS location of your original never travel inside the saved file. The original date and place are kept beside it in Photos only if you turn on Keep Original Photo Details, which is off unless you choose it.</p>
+
+      <h2 class="pt-h2" id="behind-it">The requirements behind it</h2>
+      <p class="muted net-lead">How saving is specified and checked: the four steps it runs, the rules for each format, and the acceptance criteria the tests hold it to.</p>
+      <details class="pt-more"><summary>Show the four steps of a save</summary><div class="pt-more-body">
+<div class="pipeline-flow" aria-label="Export pipeline"><article class="pipeline-step"><b>EX-01</b><h3>Validate and snapshot</h3><p>Confirm a usable document, then capture synchronized document, profile and canvas state.</p></article><article class="pipeline-step"><b>EX-02</b><h3>Resolve source</h3><p>Open the best available full-quality source for this scoped render operation.</p></article><article class="pipeline-step"><b>EX-03</b><h3>Render and compose</h3><p>Rebuild required AI and decor assets, apply shared geometry and assemble final pixels.</p></article><article class="pipeline-step"><b>EX-04</b><h3>Deliver safely</h3><p>Choose format, apply the chosen quality or print size and the metadata privacy rules, then save or share the result.</p></article></div>
+</div></details>
+      <details class="pt-more"><summary>Show the format rules and user controls</summary><div class="pt-more-body">
+<div class="ba-grid"><article class="ba-card"><span>Format rules</span><h3>Pixels determine the container</h3><ul><li>PNG protects required transparency. Choose Transparent as the Background Fill (Frame → Print &amp; Shape) and the photo saves as a PNG with real transparency.</li><li>Opaque stills can use JPEG.</li><li>GIF and video receive a solid matte where equivalent alpha is unavailable.</li></ul></article><article class="ba-card"><span>Business controls</span><h3>Delivery stays under user control</h3><ul><li>Final review precedes delivery.</li><li>For a GIF, video or Live Photo, Final Review has a Quality choice for that one export and shows the file size before you save.</li><li>Long-running work reports progress and can be cancelled.</li><li>The original date and location are kept beside the saved photo only when Keep Original Photo Details is on.</li></ul></article></div>
+</div></details>
+      <details class="pt-more"><summary>Show the four acceptance criteria</summary><div class="pt-more-body">
+<p class="muted">The promise, as the specification states it:</p><ul><li>No mid-export state drift</li><li>No resolution-dependent crop movement</li><li>No UI-only ownership of reusable AI assets</li></ul><ol class="ac-list"><li>Given a synchronized document, when preview and export render at different resolutions, then normalized photo and caption positions retain the same visual placement.</li><li>Given 3D Pop, parallax or a frame shadow, when preview and export calculate clearance, then both use the shared frame-padding decision.</li><li>Given reusable AI subject assets, when export runs, then it resolves document-owned artifacts or rebuilds them at export quality rather than depending on a transient UI cache.</li><li>Given privacy controls that remove metadata, when the result is delivered, then restricted creation, location or camera data does not travel in the exported file.</li></ol>
+</div></details>
+
+      <h2 class="pt-h2">Common questions</h2><details class="pt-faq"><summary>Why do exported photos sometimes look different from the preview in other apps?</summary><p>Usually because the preview and the export are drawn by different code paths at different resolutions. Max Photo Frames renders both from one shared geometry contract, so positions, crop and layer order stay identical.</p></details><details class="pt-faq"><summary>Does exporting share my location or camera data?</summary><p>Camera settings, lens and GPS location never travel inside the saved file: the app draws a new image, so the original photo’s details are not carried over. The original date and location are stored beside the saved photo in your Photos library only if you turn on Hub → Saving Photos → Keep Original Photo Details, which is off by default. A saved video or GIF keeps the photo’s capture date in Photos either way, and Save with Current Date uses today’s date instead. Camera numbers appear on the picture itself only if you placed a camera settings caption there.</p></details><details class="pt-faq"><summary>What resolution do I get?</summary><p>You choose one of four levels in Hub → Saving Photos → Quality: Low (1080 px), Medium (2048 px), High (4096 px, the everyday default) or Max (as much of the photo’s own detail as the device can keep). A framed or captioned design is saved at the design’s size, so the frame, words and logo stay sharp; a plain photo is never enlarged beyond its own size. With a print size chosen, the photo saves for that paper at 300 dots per inch, so an 8x10 is 2,400 x 3,000 pixels, and Frame → Print &amp; Shape tells you what your photo will give on that paper. When AI subject effects are active the output has a practical ceiling, and the quality picker states this rather than quietly downscaling.</p></details>
       <nav class="pt-pager" aria-label="Section pagination"><a class="pt-prev" href="text-behind-subject.html">← Layers &amp; Depth</a><a class="pt-next" href="how-the-app-is-built-and-tested.html">Built &amp; Tested →</a></nav>
       <aside class="pt-cta"><div><div class="eyebrow">The app itself</div><h2>See it on your own photos.</h2><p>Max Photo Frames is free on the App Store for iPhone and iPad.</p></div><div class="actions"><a class="button primary" href="https://apps.apple.com/app/apple-store/id6751881820?pt=118095182&amp;ct=max34lab.com&amp;mt=8" target="_blank" rel="noopener">Download on the App Store ↗</a><a class="button secondary" href="../tutorial.html">See the photo editing tutorial</a></div></aside>
     </div>
   </main>
 
   <footer class="site-footer"><div class="container footer-row"><span>© <span data-year></span> Max34Lab</span><span><a href="../index.html">Max Photo Frames</a> · <a href="../privacy-guide.html">Privacy</a> · <a href="../support.html">Support</a> · <a href="../terms.html">Terms</a></span></div></footer><a class="back-to-top" href="#top" aria-label="Back to top">Back to top ↑</a>
-  <script src="../../../assets/js/main.js"></script>
+  <script src="../../../assets/js/main.js?v=20260924g"></script>
+<script src="../../../assets/js/tech-nav.js?v=20260924c" defer></script>
 </body>
 </html>
