@@ -68,16 +68,16 @@ Then open `http://localhost:8000`.
 
 ---
 
-## v3.2 release (staged 2026-08-25)
+## v3.3 release (staged 2026-09-24)
 
-**The site is fully written for 3.2 and is STAGED, NOT DEPLOYED.**
+**The site is fully written for 3.3 and is STAGED, NOT DEPLOYED.** 3.2 is live and the site that
+describes it was deployed (confirmed on 2026-09-24 by reading the live page).
 
-Read `DEPLOY-GATE.md` before publishing. In short: three lines now claim 3.2.0 is live on the App
-Store, which is not true until Apple approves the release. Deploy the whole site in one go once 3.2
-is downloadable; if you need to publish something unrelated before then, revert those three lines
-first. The gate file names them and gives the revert command.
+Read `DEPLOY-GATE.md` before publishing. In short: seven lines now claim 3.3.0 is live on the App
+Store, which is not true until Apple approves the release. Deploy the whole site in one go once 3.3
+is downloadable; if you need to publish something unrelated before then, revert to the 3.2 site
+first. The gate file names every line and gives the revert command.
 
-Per-version history is in `CHANGELOG.md`, and each release is tagged (`website-v3.2`). To see the
-site as it shipped for a release, check out the tag — there is no folder of copies, deliberately, so
-there is nothing to drift out of sync.
-
+Per-version history is in `CHANGELOG.md`, and each release is tagged (`website-v3.3`, `website-v3.2`).
+To see the site as it shipped for a release, check out the tag. There is no folder of copies,
+deliberately, so there is nothing to drift out of sync.
