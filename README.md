@@ -49,7 +49,8 @@ deployment API call itself failing) — not this warning.
 
 ## SEO and analytics
 
-- Submit `https://max34lab.com/sitemap.xml` in Google Search Console after publishing.
+- Submit `https://www.max34lab.com/sitemap.xml` in Google Search Console after publishing. The site is
+  served at `www`; the bare domain redirects there, so every address in the site uses `www`.
 - Use URL inspection to request indexing for important new pages; indexing and performance data may take time to appear.
 - Search Console reports Google search visibility. It does not measure all website visits or App Store downloads.
 - If visitor analytics are added later, choose a privacy-conscious website analytics service and document it in the privacy policy. Do not add analytics to the iOS app or imply that website analytics measure in-app activity.
