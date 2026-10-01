@@ -28,14 +28,63 @@ Static portfolio website for GitHub Pages.
 4. Copy a project card in `index.html` and link it to the new project folder.
 5. Add a new visual class in `assets/css/styles.css` if you want a different colour treatment.
 
-## Publish with GitHub Pages
+## Where the content comes from
 
-1. Upload these files to the root of the `max34lab` repository.
-2. Open **Settings → Pages** in GitHub.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the `main` branch and `/root` folder.
-5. Save.
-6. Configure the custom domain as `max34lab.com`.
+The words and pictures about Max Photo Frames come from the app's own repository
+(`maxaiclaw-gh/max-photo-frames`, private, on the Mac at `~/Documents/Projects/MaxPhotoFrames-git`).
+The release procedure, with the full asset map (which store artboard becomes which file here, at
+what size and name), the text sources and the checks, is in that repository at
+`docs/releases/website-sync-runbook.md` (and its `.html` companion).
+
+This site never receives folders copied from the app repository. Each image is exported one by one
+into this repository's own folders, and each text change is made by hand in the page here. The app
+repository's old copy of the site (`assets/website/`) was removed on 2026-10-01; this repository is
+the only copy.
+
+## Folder map
+
+| Folder | What goes in it |
+|---|---|
+| `/` (top level) | Site-wide pages and files only: `index.html`, `about.html`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`, and this repository's notes (`README.md`, `DEPLOY-GATE.md`, `CHANGELOG.md`) |
+| `projects/` | One page or folder per public project (`a-insurance.html`, `maxphotoframes/`) |
+| `projects/maxphotoframes/` | The Max Photo Frames pages: product page (`index.html`), `tutorial.html`, `support.html`, `privacy.html`, `privacy-guide.html`, `terms.html` |
+| `projects/maxphotoframes/guides/` | Audience guides, one page per search topic |
+| `projects/maxphotoframes/technology/` | The technology section, one page per topic |
+| `assets/css/` | Style sheets: `styles.css` (whole site), `product-tech.css` (technology section) |
+| `assets/js/` | Scripts: `main.js` (menu, year), `tech-nav.js` (technology section) |
+| `assets/images/` | Images for projects other than Max Photo Frames (`a-insurance-*.webp`) |
+| `assets/images/maxphotoframes/` | Max Photo Frames images: store screenshots `vXY-NN-<slug>.webp`, `-ipad.webp`, `-small.webp`; diagrams and privacy captures |
+| `assets/images/maxphotoframes/tutorial/` | Tutorial captures, `NN-<name>.webp` and `NN-<name>-thumb.webp` |
+| `assets/images/og/` | Social share cards, 1200 x 630 JPEG |
+
+Images are WebP except the share cards. Nothing else goes at the top level.
+
+## Publishing workflow
+
+The site is served by GitHub Pages from `main`, folder `/root`, at www.max34lab.com (domain from
+`CNAME`). **A push to `main` is live within minutes**, so `main` only receives finished, reviewed
+work, and only with the owner's go.
+
+1. Start from an up to date `main`: `git checkout main && git pull` (files are sometimes uploaded
+   straight on GitHub).
+2. One branch per change: `git checkout -b <short-name>`; for an app release,
+   `release/website-vX.Y`.
+3. Edit, then preview locally from this folder:
+
+   ```bash
+   python3 -m http.server 8123
+   ```
+
+   and open http://localhost:8123. Check every page you touched, in light and dark, at phone width.
+4. Commit with explicit paths (`git add <files>`, never `git add -A`).
+5. Read `DEPLOY-GATE.md`. If the change claims a new app version, it may only go out once that
+   version is downloadable on the App Store.
+6. Merge to `main` and push: `git checkout main && git merge --no-ff <branch> && git push origin main`.
+7. For an app release, tag the merge `website-vX.Y` and push the tag
+   (`git tag -a website-vX.Y -m "..." && git push origin website-vX.Y`), and add the release to
+   `CHANGELOG.md`.
+8. Check the live page at https://www.max34lab.com in a private window. If something is wrong,
+   `git revert -m 1 <merge commit>` on `main` and push.
 
 ### Deploy log noise: `punycode` deprecation warning
 
@@ -55,30 +104,19 @@ deployment API call itself failing) — not this warning.
 - Search Console reports Google search visibility. It does not measure all website visits or App Store downloads.
 - If visitor analytics are added later, choose a privacy-conscious website analytics service and document it in the privacy policy. Do not add analytics to the iOS app or imply that website analytics measure in-app activity.
 
-The public site contains no owner-only work-hour log, raw Git journal, donor identity data or credentials. Keep those in a local-only ignored dashboard as described in `docs/roadmap/maxphotoframes-website-v2-plan.md`.
+The public site contains no owner-only work-hour log, raw Git journal, donor identity data or credentials. Keep those in a local-only ignored dashboard as described in the app repository at `docs/roadmap/maxphotoframes-website-v2-plan.md`.
 
-## Local preview
+## Current state (checked 2026-10-01)
 
-You can open `index.html` directly, or run a local static server:
+**The site is current for Max Photo Frames 3.3**, which has been live on the App Store since
+2026-09-25. `main` already says Version 3.3 on the product page and on the privacy policy (updated
+24 September 2026), so there is nothing staged and nothing waiting to deploy. `DEPLOY-GATE.md`
+reads CLEAR (3.3).
 
-```bash
-python3 -m http.server 8000
-```
+**Owed:** this repository has no tags yet. `website-v3.3` (and `website-v3.2`) are named in
+`CHANGELOG.md` but were never created here; the 3.3 tag should be put on the current `main` with
+the owner's go. To see the site as it was for a release, check out its tag once it exists; there is
+no folder of copies, deliberately, so nothing can drift out of sync.
 
-Then open `http://localhost:8000`.
-
----
-
-## v3.3 release (staged 2026-09-24)
-
-**The site is fully written for 3.3 and is STAGED, NOT DEPLOYED.** 3.2 is live and the site that
-describes it was deployed (confirmed on 2026-09-24 by reading the live page).
-
-Read `DEPLOY-GATE.md` before publishing. In short: seven lines now claim 3.3.0 is live on the App
-Store, which is not true until Apple approves the release. Deploy the whole site in one go once 3.3
-is downloadable; if you need to publish something unrelated before then, revert to the 3.2 site
-first. The gate file names every line and gives the revert command.
-
-Per-version history is in `CHANGELOG.md`, and each release is tagged (`website-v3.3`, `website-v3.2`).
-To see the site as it shipped for a release, check out the tag. There is no folder of copies,
-deliberately, so there is nothing to drift out of sync.
+Next release: 4.0, staged on a `release/website-v4.0` branch while it is in review (see
+`DEPLOY-GATE.md`).

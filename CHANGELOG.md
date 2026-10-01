@@ -11,16 +11,41 @@ the others silently keep the typo forever. Git already stores every version loss
 gives the same "see it as it was" ability with one copy on disk and no chance of drift.
 
 ```bash
-git show website-v3.2:assets/website/projects/maxphotoframes/index.html   # a single file, as shipped
-git checkout website-v3.2 -- assets/website                                # the whole site, as shipped
-git tag -l 'website-*'                                                     # every tracked version
+git show website-v3.3:projects/maxphotoframes/index.html   # a single file, as shipped
+git checkout website-v3.3 -- .                               # the whole site, as shipped
+git tag -l 'website-*'                                       # every tracked version
 ```
+
+**Tags owed (checked 2026-10-01):** this repository has no tags yet. `website-v3.3` should go on
+the current `main`; `website-v3.2` could only be recreated from the app repository's history, where
+the site lived under `assets/website/` until 2026-10-01.
 
 ---
 
-## website-v3.2 — staged 2026-08-25, **not yet deployed**
+## website-v3.3: live (app 3.3 live on the App Store since 2026-09-25)
 
-Deployment is gated on the App Store release. See `DEPLOY-GATE.md`.
+Tag `website-v3.3` not yet created (owed). Checked 2026-10-01 by reading `main`; the exact
+deploy date of the 3.3 copy was not recorded and is not verified.
+
+**Version lines moved to 3.3**
+- Product page: eyebrow "Free for iPhone and iPad, Version 3.3"; "New in 3.3" tiles (print sizes,
+  your logo as the watermark, camera settings on the photo, iPad landscape editor, export quality,
+  large text and VoiceOver)
+- Privacy policy: "Updated for Max Photo Frames Version 3.3", last updated 24 September 2026
+- Technology, how it is built and tested: figures counted at the 3.3 build (5,777 commits, 3,074
+  tests)
+
+**New images**
+- Store screenshots `assets/images/maxphotoframes/v33-01` to `v33-06` (iPhone 720 px, iPad 860 px,
+  slot 1 small 280 px), exported from the 3.3 App Store artboards (light, en-US)
+- The 3.2 screenshots `01-`, `03-` to `06-` (and `-ipad`) are still in the folder but no page links
+  to them
+
+---
+
+## website-v3.2: staged 2026-08-25, later deployed (superseded by 3.3)
+
+Not tagged in this repository (see above).
 
 **Version lines moved to 3.2**
 - Product page side card: `3.1.0` → `3.2.0, live on the App Store`
@@ -81,4 +106,4 @@ making a promise, so pointing at it is honest and worth the traffic.
 
 ## website-v3.1 and earlier
 
-Not tagged retrospectively. History is in `git log -- assets/website`.
+Not tagged retrospectively. History is in the app repository: `git log -- assets/website` there (the folder was removed on 2026-10-01; its history remains).
