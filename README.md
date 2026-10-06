@@ -19,6 +19,9 @@ Static portfolio website for GitHub Pages.
 - `CNAME`: custom domain
 - `robots.txt`: crawler access and canonical sitemap location
 - `sitemap.xml`: public page URLs for search engines
+- `.well-known/apple-app-site-association`: tells iOS which links open the Max Photo Frames app instead of
+  Safari (only `/projects/maxphotoframes/app/*`; app requirement FR-4.534). JSON with no file extension
+- `.nojekyll`: turns off GitHub Pages' Jekyll build, which would otherwise drop the `.well-known/` folder
 
 ## Add another project
 
@@ -45,7 +48,7 @@ the only copy.
 
 | Folder | What goes in it |
 |---|---|
-| `/` (top level) | Site-wide pages and files only: `index.html`, `about.html`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`, and this repository's notes (`README.md`, `DEPLOY-GATE.md`, `CHANGELOG.md`) |
+| `/` (top level) | Site-wide pages and files only: `index.html`, `about.html`, `404.html`, `CNAME`, `robots.txt`, `sitemap.xml`, `.nojekyll`, `.well-known/`, and this repository's notes (`README.md`, `DEPLOY-GATE.md`, `CHANGELOG.md`) |
 | `projects/` | One page or folder per public project (`a-insurance.html`, `maxphotoframes/`) |
 | `projects/maxphotoframes/` | The Max Photo Frames pages: product page (`index.html`), `tutorial.html`, `support.html`, `privacy.html`, `privacy-guide.html`, `terms.html` |
 | `projects/maxphotoframes/guides/` | Audience guides, one page per search topic |
