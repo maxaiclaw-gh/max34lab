@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["55EGUW7R9E.olim.MaxPhotoFrames"],
+        "components": [
+          {
+            "/": "/projects/maxphotoframes/app/*",
+            "comment": "Max Photo Frames in-app destinations (FR-4.534). Every other page opens in Safari."
+          }
+        ]
+      }
+    ]
+  }
+}
